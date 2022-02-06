@@ -20,33 +20,31 @@ class BinarySearch {
     int search(int guess, ArrayList arrayList) {
 
         int low = 0;
-        int high = (int) arrayList.get(arrayList.size() - 1);
-        int mid = (high - low) / 2;
+        int high = 100;
 
-        while (low != high) {
+        while (low <= high) {
+            int mid = (high - low) / 2;
+            int choose = (int) arrayList.get(mid);
 
-            if (mid < guess) {
+            if (choose < guess) {
                 low = mid + 1;
-                high = (int) arrayList.get(arrayList.size() - 1);
-                mid = (high - low) / 2;
                 System.out.println("mid<guess");
 
 
             }
-            if (mid > guess) {
+            if (choose > guess) {
                 high = mid - 1;
-                mid = (high - low) / 2;
-                low = 0;
+
                 System.out.println("mid>guess");
 
 
 
             }
-            if (mid == guess) {
+            if (choose == guess) {
                 return mid;
             }
 
         }
-        return 0;
+        return 0 ;
     }
 }
