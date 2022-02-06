@@ -23,7 +23,7 @@ class BinarySearch {
         int high = 100;
 
         while (low <= high) {
-            int mid = (high - low) / 2;
+            int mid = (low+high) / 2;
             int choose = (int) arrayList.get(mid);
 
             if (choose < guess) {
